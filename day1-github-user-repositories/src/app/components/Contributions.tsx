@@ -9,11 +9,11 @@ export default function Contributions(props: {
     let canvasDOM = createRef<HTMLCanvasElement>();
 
     useEffect(() => {
-            drawContributions(canvasDOM.current, {
-                data: props.contributions,
-                themeName: "githubDark",
-                username: props.username,
-            });
+        drawContributions(canvasDOM.current as HTMLCanvasElement, {
+            data: props.contributions,
+            themeName: "githubDark",
+            username: props.username,
+        });
     }, [props.username]);
 
     return <canvas className="max-w-full min-h-full" ref={canvasDOM} />;
